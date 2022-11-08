@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ToiletController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('wc-data', [ToiletController::class, 'storeToiletData']);
+Route::get('get-wc-data', [ToiletController::class, 'showToiletData']);
+Route::post('wc', [ToiletController::class, 'canUseToilet']);
