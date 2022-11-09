@@ -36,7 +36,7 @@ class ToiletController extends Controller
                 'text'       => 'Het toilet is weer vrij ' . $inLine->first()->user_name . '! :white_check_mark:',
             ]);
 
-            DB::table('toilet-queue')->where('id', $inLine->first()->id)->delete();
+            $inLine->first()->delete();
         }
     }
 
