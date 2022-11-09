@@ -9,6 +9,8 @@ class ToiletQueue extends Model
 {
     use HasFactory;
 
+    protected $table = 'toilet-queues';
+
     protected $fillable = [
         'channel_id',
         'user_name',
